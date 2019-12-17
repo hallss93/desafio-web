@@ -1,17 +1,13 @@
 import axios from 'axios'
-import types from './types';
 import utils from './utils';
+import actions from './actions';
 
 function getRepositories(page) {
     return dispatch => {
-        axios.get(`${utils.URL}&page=${page}`)
+        axios.get(`${utils.URL_SEARCH_REPOSITORIES}&page=${page}`)
             .then(res => {
-                dispatch({
-                    type: types.FETCH_REPO,
-                    data: res.data.items
-                })
-            }
-            );
+                dispatch(actions.getRepo(res.data.items))
+            });
     };
 }
 

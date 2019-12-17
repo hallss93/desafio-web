@@ -1,9 +1,9 @@
 import types from './types';
 
-const getRepo = (value) => {
+const getRepo = (data) => {
     return {
         type: types.FETCH_REPO,
-        value,
+        data,
     }
 }
 export default {
