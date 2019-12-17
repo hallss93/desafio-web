@@ -1,21 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonToolbar, Navbar, Container, Image } from 'react-bootstrap';
+import { Navbar, Container, Image } from 'react-bootstrap';
+import { Provider } from 'react-redux'
+import store from './store'
+import List from './components/List/List'
 
 function App() {
   return (
-    <>
-    <Navbar expand="lg">
-      <Container>
-        <Image src="https://fonts.gstatic.com/s/i/materialicons/menu/v1/24px.svg" className="menu-icon" />
-        <Navbar.Brand href="#">Github JavaPop</Navbar.Brand>
-      </Container>
-    </Navbar>
+    <Provider store={store}>
+      <Navbar expand="lg">
+        <Container>
+          <Image src="https://fonts.gstatic.com/s/i/materialicons/menu/v1/24px.svg" className="menu-icon" />
+          <Navbar.Brand href="#">Github JavaPop</Navbar.Brand>
+        </Container>
+      </Navbar>
+      <List></List>
 
-
-    {/* Listagem */}
-    </>
+      {/* Listagem */}
+    </Provider>
   );
 }
 
