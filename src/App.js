@@ -4,7 +4,7 @@ import { Navbar, Container, Image } from 'react-bootstrap';
 import { Provider } from 'react-redux'
 import store from './store'
 import List from './components/List/List'
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Provider store={store}>
@@ -14,9 +14,16 @@ function App() {
           <Navbar.Brand href="#">Github JavaPop</Navbar.Brand>
         </Container>
       </Navbar>
-      <List></List>
 
-      {/* Listagem */}
+      <BrowserRouter>
+        <Switch>
+          {/* Listagem */}
+          <Route exact path="/" component={List} />
+        </Switch>
+      </BrowserRouter>
+
+
+
     </Provider>
   );
 }
