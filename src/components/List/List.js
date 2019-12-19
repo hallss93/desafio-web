@@ -1,31 +1,23 @@
+// Libary
 import React, { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Opx from './../../store/operations'
+
+// Components
 import ListItem from './ListItem'
-function useInterval(callback, delay) {
-    const savedCallback = useRef();
 
-    useEffect(() => {
-        savedCallback.current = callback;
-    }, [callback]);
+// Store
+import Opx from './../../store/operations'
 
-    useEffect(() => {
-        function tick() {
-            savedCallback.current();
-        }
-        if (delay !== null) {
-            let id = setInterval(tick, delay);
-            return () => clearInterval(id);
-        }
-    }, [delay]);
-}
-export default function List() {
+// Utils
+import useInterval from './../../utils/useInterval'
+
+export default function List({ parentCallback }) {
     const dispatch = useDispatch()
     let courses = useSelector(state => state.data)
     let page = useSelector(state => state.page)
 
     function verifyScrool() {
-        let offsetTop = document.querySelector("#root > ul > li:last-child").offsetTop
+        let offsetTop = document.querySelector("#root > div > ul > li:last-child").offsetTop
         let scrollY = window.scrollY
         let innerHeight = window.innerHeight;
         let nextHeight = offsetTop - scrollY - (innerHeight * 2)
@@ -38,14 +30,17 @@ export default function List() {
         verifyScrool();
     }, 2000);
     useEffect(() => {
+        parentCallback(undefined)
         dispatch(Opx.getRepositories(page));
     }, [page]);
 
     return (
-        <ul>
-            {
-                courses.map(ListItem)
-            }
-        </ul>
+        <div className="container-margin">
+            <ul>
+                {
+                    courses.map(ListItem)
+                }
+            </ul>
+        </div>
     )
 }

@@ -1,8 +1,17 @@
+/**
+ * @description             Actions modules for reduce code
+ */
 import types from './types';
 
 const getRepo = (data) => {
     return {
         type: types.FETCH_REPO,
+        data,
+    }
+}
+const getOneRepo = (data) => {
+    return {
+        type: types.FETCH_ONE_REPO,
         data,
     }
 }
@@ -14,5 +23,6 @@ const setPage = (data) => {
 }
 export default {
     getRepo,
-    setPage
+    getOneRepo,
+    setPage,
 }

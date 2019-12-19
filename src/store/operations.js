@@ -1,3 +1,7 @@
+/**
+ * @description             Operations using or not Axios
+ */
+
 import axios from 'axios'
 import utils from './utils';
 import actions from './actions';
@@ -10,6 +14,14 @@ function getRepositories(page) {
             });
     };
 }
+function getRepository(url) {
+    return dispatch => {
+        axios.get(`${url}`)
+            .then(res => {
+                dispatch(actions.getOneRepo(res.data))
+            });
+    };
+}
 
 function setPage(page) {
     return dispatch => {
@@ -19,5 +31,6 @@ function setPage(page) {
 
 export default {
     getRepositories,
+    getRepository,
     setPage
 }

@@ -1,3 +1,7 @@
+/**
+ * @description             Create Store and apply Middlewares. 
+ *                          Here is reponsibly for combine stores.
+ */
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import types from './types';
@@ -6,12 +10,18 @@ import uab from 'unique-array-objects';
 
 function repositories(state = initials.REPO_INITIAL, action) {
     switch (action.type) {
-        case types.FETCH_REPO:{
+        case types.FETCH_REPO: {
             let courses = uab([...state.data, ...action.data])
             return {
-                ...state,
+                pulls: state.pulls,
                 data: courses,
                 page: state.page
+            };
+        }
+        case types.FETCH_ONE_REPO: {
+            return {
+                ...state,
+                pulls: action.data
             };
         }
         case types.SET_PAGE:

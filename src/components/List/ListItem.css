@@ -1,10 +1,17 @@
 .item-container {
-  cursor: pointer;
   border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.pointer {
+  cursor: pointer;
+}
+.item-container.flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+}
+.item-container .block {
+  display: block;
 }
 .item-container:hover {
   background: #cccccc1a;
@@ -48,22 +55,34 @@ p {
 .title {
   color: #417baf;
 }
-.flex {
+.body-flex {
   margin-top: 5px;
   display: flex;
 }
 
-.flex div {
+.body-flex div {
   align-items: center;
   margin-right: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.flex div p {
+.body-flex div p {
   font-weight: bold;
-  color: #e09205;
   display: contents;
+}
+.open,
+.body-flex div p {
+  color: #e09205;
+}
+.open {
+  margin-right: 5px;
+}
+.closed {
+  font-weight: bold;
+}
+.closed:before {
+  content: " /  ";
 }
 
 .item-body .title {
@@ -77,4 +96,17 @@ p {
   .item-container {
     padding: 10px 0px 10px 30px;
   }
+}
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+  background-color: transparent !important;
+}
+.avatar-container {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+.avatar-container p {
+  margin-left: 10px;
 }

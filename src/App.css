@@ -1,4 +1,6 @@
 nav {
+  top:0;
+  width: 100%;
   background: #343438;
 }
 nav,
@@ -16,6 +18,23 @@ ul {
   list-style-type: none;
   padding: 0px;
 }
-nav, .navbar-light .navbar-brand, .menu-icon:hover{
-color: white;
+nav,
+.navbar-light .navbar-brand,
+.menu-icon:hover {
+  color: white;
+}
+.bread-c {
+  display: flex;
+  padding: 15px;
+  background: #cccccc4d;
+}
+.container-margin{
+  margin-top: 50px;
+}
+
+.navbar{
+  position: fixed!important;
+}
+*{
+  scroll-behavior: smooth;
 }
