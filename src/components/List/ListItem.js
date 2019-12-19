@@ -31,6 +31,7 @@ export default function ListItem(course) {
                     <div className="item-avatar">
                         <Image src={require('./../../assets/img/user.png')} width="45" />
                         <p className="title">{course.owner.login}</p>
+                        <p>{new Date(course.created_at).toLocaleString()}</p>
                     </div>
                 </div>
             </Link>
