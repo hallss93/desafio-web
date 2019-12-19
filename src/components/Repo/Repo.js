@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Opx from './../../store/operations'
 import Item from './Item'
 
+// Style
 const { ContainerMargin, ContainerBread } = require('./../../assets/styled/Container')
 const { ItemBodyTextOpen, ItemBodyTextClosed } = require('./../../assets/styled/ItemBody')
 const { ListCustom } = require('./../../assets/styled/ListCustom')

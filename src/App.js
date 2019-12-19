@@ -1,13 +1,21 @@
+// Libary
 import React, { useState } from 'react';
-import './App.css';
 import { Container } from 'react-bootstrap';
 import { Provider } from 'react-redux'
-import store from './store'
-import List from './components/List/List'
-import Repo from './components/Repo/Repo'
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
+// Strore
+import store from './store'
+
+// Components
+import List from './components/List/List'
+import Repo from './components/Repo/Repo'
+
+// Style
+import './App.css';
 const { MenuIcon, Nav, NavbarBrand } = require('./assets/styled/Nav')
+
+
 function App() {
 
   const Home = () => {
