@@ -1,6 +1,11 @@
-// Libary
+
 import { useEffect, useRef } from 'react'
-export default function useInterval(callback, delay) {
+/**
+ * 
+ * @param {function} callback       Function Callback
+ * @param {Number} delay            Number for delay
+ */
+export default function useInterval(callback, delay = 2000) {
     const savedCallback = useRef();
 
     useEffect(() => {
