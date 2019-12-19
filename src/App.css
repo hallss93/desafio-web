@@ -12,3 +12,10 @@ nav,
 .navbar-brand {
   flex: 1;
 }
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+nav, .navbar-light .navbar-brand, .menu-icon:hover{
+color: white;
+}

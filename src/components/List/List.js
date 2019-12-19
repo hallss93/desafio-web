@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Opx from './../../store/operations'
+import ListItem from './ListItem'
 
 export default function List() {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export default function List() {
     return (
         <ul>
             {
-                courses.map(course => <li key={course.id}>{course.name}</li>)
+                courses.map(ListItem)
             }
         </ul>
     )

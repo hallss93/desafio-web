@@ -1,0 +1,47 @@
+.item-container {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.h3,
+h3 {
+  font-size: 20px;
+}
+.h5,
+h5 {
+  font-size: 14px;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+p {
+  font-size: 12px;
+}
+
+.item-body {
+  flex: 3;
+}
+.item-avatar {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: #5777a9;
+}
