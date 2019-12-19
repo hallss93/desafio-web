@@ -2,29 +2,31 @@
 import React from 'react'
 import { Image } from 'react-bootstrap';
 
-// Styles
-import './../List/ListItem.css';
-
 // Utils
 import reduceString from './../../utils/reduceString'
+
+// Styles
+const { ContainerAvatar, ContainerFlex1 } = require('./../../assets/styled/Container')
+const { ItemContainerBlock } = require('./../../assets/styled/ItemContainer')
+const { ItemBody, ItemBodyTitle } = require('./../../assets/styled/ItemBody')
+const { TextSmall, TextSmallCyan, TextH5 } = require('./../../assets/styled/Text')
 
 export default function Item(pulls) {
     return (
         <li key={pulls.id}>
-            <div className="item-container block">
-                <div className="item-body">
-                    <h3 className="title">{reduceString(pulls.title, 20)}</h3>
-                    <h5>{reduceString(pulls.body)}</h5>
-                </div>
-                <div className="avatar-container">
+            <ItemContainerBlock>
+                <ItemBody>
+                    <ItemBodyTitle>{reduceString(pulls.title, 20)}</ItemBodyTitle>
+                    <TextH5>{reduceString(pulls.body)}</TextH5>
+                </ItemBody>
+                <ContainerAvatar>
                     <Image src={require('./../../assets/img/user.png')} width="45" />
-                    <div className="flex-1-1">
-                        <p className="title">{pulls.user.login}</p>
-                        <p>Created at: {new Date(pulls.created_at).toLocaleString()}</p>
-
-                    </div>
-                </div>
-            </div>
+                    <ContainerFlex1>
+                        <TextSmall>{pulls.user.login}</TextSmall>
+                        <TextSmallCyan>Created at: {new Date(pulls.created_at).toLocaleString()}</TextSmallCyan>
+                    </ContainerFlex1>
+                </ContainerAvatar>
+            </ItemContainerBlock>
         </li>
     )
 }

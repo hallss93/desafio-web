@@ -7,6 +7,10 @@ import { useParams } from "react-router-dom";
 import Opx from './../../store/operations'
 import Item from './Item'
 
+const { ContainerMargin, ContainerBread } = require('./../../assets/styled/Container')
+const { ItemBodyTextOpen, ItemBodyTextClosed } = require('./../../assets/styled/ItemBody')
+const { ListCustom } = require('./../../assets/styled/ListCustom')
+
 export default function Repo({ parentCallback }) {
     const dispatch = useDispatch()
     let pulls = useSelector(state => state.pulls)
@@ -23,22 +27,22 @@ export default function Repo({ parentCallback }) {
     let pulls_url = course_info.pulls_url.replace('{/number}', '')
 
     useEffect(() => {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
         parentCallback(pulls_url.split('/')[5])
         dispatch(Opx.getRepository(pulls_url));
     }, [])
     return (
-        <div className="container-margin">
-            {pulls.length > 0 ? <div className="bread-c">
-                <div className="open">{open} opened</div>
-                <div className="closed">{closed} closed</div>
-            </div> : <></>
+        <ContainerMargin>
+            {pulls.length > 0 ? <ContainerBread>
+                <ItemBodyTextOpen>{`${open} opened`}</ItemBodyTextOpen>
+                <ItemBodyTextClosed>{`${closed} closed`}</ItemBodyTextClosed>
+            </ContainerBread> : <></>
             }
-            <ul>
+            <ListCustom>
                 {
                     pulls.map(Item)
                 }
-            </ul>
-        </div>
+            </ListCustom>
+        </ContainerMargin>
     )
 }

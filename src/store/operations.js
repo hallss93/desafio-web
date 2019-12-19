@@ -25,6 +25,7 @@ function getRepository(url) {
 
 function setPage(page) {
     return dispatch => {
+        console.log(page)
         dispatch(actions.setPage(page))
     };
 }

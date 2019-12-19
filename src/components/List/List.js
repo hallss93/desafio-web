@@ -1,5 +1,5 @@
 // Libary
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 // Components
@@ -10,6 +10,10 @@ import Opx from './../../store/operations'
 
 // Utils
 import useInterval from './../../utils/useInterval'
+
+// Style
+const { ContainerMargin } = require('./../../assets/styled/Container')
+const { ListCustom } = require('./../../assets/styled/ListCustom')
 
 export default function List({ parentCallback }) {
     const dispatch = useDispatch()
@@ -36,12 +40,12 @@ export default function List({ parentCallback }) {
     }, [page]);
 
     return (
-        <div className="container-margin">
-            <ul>
+        <ContainerMargin>
+            <ListCustom>
                 {
                     courses.map(ListItem)
                 }
-            </ul>
-        </div>
+            </ListCustom>
+        </ContainerMargin>
     )
 }

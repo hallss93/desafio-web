@@ -8,5 +8,6 @@ const CLEAR_PULL = 'CLEAR_PULL';
 export default {
     FETCH_REPO,
     FETCH_ONE_REPO,
+    SET_PAGE,
     CLEAR_PULL,
 }

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Navbar, Container, Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Provider } from 'react-redux'
 import store from './store'
 import List from './components/List/List'
 import Repo from './components/Repo/Repo'
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+
+const { MenuIcon, Nav, NavbarBrand } = require('./assets/styled/Nav')
 function App() {
 
   const Home = () => {
@@ -19,18 +21,18 @@ function App() {
     <Provider store={store}>
 
       <BrowserRouter>
-        <Navbar expand="lg">
+        <Nav className="navbar navbar-expand-lg navbar-light">
           <Container>
             {
               navMode ?
                 <Link to={`/`}>
-                  <Image src={require('./assets/img/left-arrow.png')} width="20" className="menu-icon" />
+                  <MenuIcon src={require('./assets/img/left-arrow.png')} width="20" className="menu-icon" />
                 </Link>
-                : <Image src={require('./assets/img/menu.png')} width="20" className="menu-icon" />
+                : <MenuIcon src={require('./assets/img/menu.png')} width="20" className="menu-icon" />
             }
-            <Navbar.Brand href="/">{navMode ? navMode : 'Github JavaPop'}</Navbar.Brand>
+            <NavbarBrand href="/">{navMode ? navMode : 'Github JavaPop'}</NavbarBrand>
           </Container>
-        </Navbar>
+        </Nav>
         <Switch>
           {/* Listagem */}
           <Route exact path="/" component={Home} />
