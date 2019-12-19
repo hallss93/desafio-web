@@ -1,9 +1,13 @@
 .item-container {
+  cursor: pointer;
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+.item-container:hover {
+  background: #cccccc1a;
 }
 .h3,
 h3 {
@@ -57,10 +61,13 @@ p {
   display: flex;
 }
 .flex div p {
+  font-weight: bold;
   color: #e09205;
-}
-.flex div p {
   display: contents;
+}
+
+.item-body .title {
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 720px) {
