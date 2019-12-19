@@ -1,6 +1,6 @@
 # Desafio Web
 
-Live Demo [here](https://5dfbac3f4ba3d2632836b693--priceless-hugle-f65817.netlify.com/)
+Live Demo [here](https://priceless-hugle-f65817.netlify.com)
 
 A challenge project using `React` and `Redux` for repository listing and `pull request`.
 ## Installation
