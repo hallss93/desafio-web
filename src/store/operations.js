@@ -11,6 +11,13 @@ function getRepositories(page) {
     };
 }
 
+function setPage(page) {
+    return dispatch => {
+        dispatch(actions.setPage(page))
+    };
+}
+
 export default {
-    getRepositories
+    getRepositories,
+    setPage
 }

@@ -6,6 +6,13 @@ const getRepo = (data) => {
         data,
     }
 }
+const setPage = (data) => {
+    return {
+        type: types.SET_PAGE,
+        data,
+    }
+}
 export default {
-    getRepo
+    getRepo,
+    setPage
 }

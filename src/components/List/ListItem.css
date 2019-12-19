@@ -2,15 +2,16 @@
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
 .h3,
 h3 {
-  font-size: 20px;
+  font-size: 16px;
 }
 .h5,
 h5 {
-  font-size: 14px;
+  font-size: 12px;
 }
 .h1,
 .h2,
@@ -35,13 +36,38 @@ p {
   flex: 3;
 }
 .item-avatar {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  height: 85px;
+  flex: 1 1;
+  text-align: center;
 }
 
 .title {
-  color: #5777a9;
+  color: #417baf;
+}
+.flex {
+  margin-top: 5px;
+  display: flex;
+}
+
+.flex div {
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.flex div p {
+  color: #e09205;
+}
+.flex div p {
+  display: contents;
+}
+
+@media only screen and (min-width: 720px) {
+  .item-body {
+    flex: 8;
+  }
+  .item-container {
+    padding: 10px 0px 10px 30px;
+  }
 }

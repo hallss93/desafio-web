@@ -1,5 +1,6 @@
 const REPO_INITIAL = {
-    data: []
+    data: [],
+    page: 1 
 };
 export default {
     REPO_INITIAL
