@@ -31,6 +31,7 @@ export default function List({ parentCallback }) {
     }, 2000);
     useEffect(() => {
         parentCallback(undefined)
+        dispatch(Opx.clearPull());
         dispatch(Opx.getRepositories(page));
     }, [page]);
 

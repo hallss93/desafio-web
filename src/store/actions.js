@@ -21,8 +21,14 @@ const setPage = (data) => {
         data,
     }
 }
+const clearPull = () => {
+    return {
+        type: types.CLEAR_PULL
+    }
+}
 export default {
     getRepo,
     getOneRepo,
     setPage,
+    clearPull
 }

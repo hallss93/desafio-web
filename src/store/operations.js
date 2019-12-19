@@ -29,8 +29,15 @@ function setPage(page) {
     };
 }
 
+function clearPull() {
+    return dispatch => {
+        dispatch(actions.clearPull())
+    };
+}
+
 export default {
     getRepositories,
     getRepository,
-    setPage
+    setPage,
+    clearPull
 }

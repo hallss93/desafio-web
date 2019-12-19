@@ -4,8 +4,9 @@
 const FETCH_REPO = 'FETCH_REPO';
 const FETCH_ONE_REPO = 'FETCH_ONE_REPO';
 const SET_PAGE = 'SET_PAGE';
+const CLEAR_PULL = 'CLEAR_PULL';
 export default {
     FETCH_REPO,
     FETCH_ONE_REPO,
-    SET_PAGE,
+    CLEAR_PULL,
 }

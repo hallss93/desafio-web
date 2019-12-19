@@ -24,6 +24,12 @@ function repositories(state = initials.REPO_INITIAL, action) {
                 pulls: action.data
             };
         }
+        case types.CLEAR_PULL: {
+            return {
+                ...state,
+                pulls: []
+            };
+        }
         case types.SET_PAGE:
             return {
                 ...state,
