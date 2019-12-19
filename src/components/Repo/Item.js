@@ -18,7 +18,11 @@ export default function Item(pulls) {
                 </div>
                 <div className="avatar-container">
                     <Image src={require('./../../assets/img/user.png')} width="45" />
-                    <p className="title">{pulls.user.login}</p>
+                    <div className="flex-1-1">
+                        <p className="title">{pulls.user.login}</p>
+                        <p>Created at: {new Date(pulls.created_at).toLocaleString()}</p>
+
+                    </div>
                 </div>
             </div>
         </li>
